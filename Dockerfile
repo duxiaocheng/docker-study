@@ -3,6 +3,8 @@
 # Based on CentOS
 # Use "docker history <image>" can get this operation
 # "docker build -t chasond/demo ."
+#
+# https://docs.docker.com/engine/reference/builder/#maintainer-deprecated
 ###############################################################################
 
 # Pull base image: FROM <image>:<tag>
@@ -31,7 +33,17 @@ ENV MY_DATA_DIR /data
 ADD docker_demo /usr/bin/
 
 # EXPOSE <port> [<port>...]
-# Same with "docker -p 55555 <image>"
+#
+# The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime.
+# EXPOSE does not make the ports of the container accessible to the host.
+# To do that, you must use either the -p flag to publish a range of ports or the -P flag to publish all of the exposed ports.
+# You can expose one port number and publish it externally under another number.
+#
+# To set up port redirection on the host system, see using the -P flag.
+# The Docker network feature supports creating networks without the need to expose ports within the network,
+# for detailed information see the overview of this feature).
+#
+# Refer to "docker run -p ip:hostPort:containerPort[/tcp] <image>"
 # EXPOSE 55555
 
 # ENTRYPOINT ["executable", "param1", "param2"] (like an exec, the preferred form)  
