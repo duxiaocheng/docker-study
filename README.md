@@ -8,6 +8,7 @@ Username: chasond<br>
 Password: <br>
 Login Succeeded<br>
 [root@centos docker-study]\# **`docker images`**
+
 | REPOSITORY                | TAG                 | IMAGE ID            | CREATED             | SIZE         |
 | ------------------------- | ------------------- | ------------------- | ------------------- | ------------ |
 | chasond/demo              | latest              | eebc3be270a5        | 33 minutes ago      | 192.5 MB     |
