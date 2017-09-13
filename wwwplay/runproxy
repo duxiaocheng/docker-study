@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# usage: source ./runserver
+proxy_url="${HOSTNAME}"
+if [ "${http_proxy}" != "" ]
+then
+    echo "clean the proxy environment ..."
+    unset http_proxy
+    unset https_proxy
+    unset ftp_proxy
+    unset proxy
+else
+    echo "set the proxy environmnet ..."
+    export http_proxy=http://135.252.192.168:5865
+    export https_proxy=http://135.252.192.168:5865
+    export ftp_proxy=http://135.252.192.168:5865
+    export proxy=http://135.252.192.168:5865
+fi
+
+env | grep proxy
+
